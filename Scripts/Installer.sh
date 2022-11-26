@@ -12,7 +12,10 @@ echo ""
 echo " 1)Visual Studio Code
       2)Brave Browser
       3)Chrome 
-      4)"
+      4)zsh
+      5)Build-Essential
+      6)VLC meadia Player
+      7)"
 read OPTION
 
 # echo -n "The official language of $COUNTRY is "
@@ -25,7 +28,7 @@ case $OPTION in
    echo ""
    echo "Version:" 
    code --version
-   echo "Installed Vs Code successfully"
+   echo " Vs Code Installed successfully"
    
     ;;
 
@@ -38,7 +41,7 @@ case $OPTION in
     sudo apt install brave-browser 2> file.txt 
     sleep 1
     rm file.txt
-    echo -n "Installed Brave successfully"
+    echo -n "Brave Installed  successfully"
     ;;
 
   3)
@@ -46,13 +49,33 @@ case $OPTION in
     echo ""
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb > file.txt 2>&1
     sudo dpkg -i google-chrome-stable_current_amd64.deb > file.txt 2>&1
-    echo -n "Installed Chrome successfully"
+    echo -n "Chrome Installed  successfully"
+    sleep 1
+    clear
     ;;
   4)
   echo -n "Installing Zsh Shell"
    sudo apt-get update > file.txt 2>&1
    sudo apt-get install zsh > file.txt 2>&1
-   echo -n "Installed zsh Shell successfully"
+   echo -n "zsh Shell Installed successfully"
+   sleep 1
+   clear
+  ;;
+
+  5)
+  echo -n "Installing Build-Essential"
+   sudo apt update && sudo apt install build-essential
+   echo -n "Build-Essential Installed successfully"
+   sleep 1
+   clear
+  ;;
+  6)
+  echo -n "Installing VLC"
+   sudo apt install snapd
+   sudo snap install vlc 
+   echo -n "VLC Installed successfully"
+   sleep 1
+   clear
   ;;
     
     

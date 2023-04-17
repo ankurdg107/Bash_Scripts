@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "Welcome, I am ready to encrypt a file/folder for you"
+echo "Thanks"
 echo "currently I have a limitation, Place me to the same folder, where a file to be encrypted is present"
 echo "Enter the Exact File Name with extension"
 read -r file

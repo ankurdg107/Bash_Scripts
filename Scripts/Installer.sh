@@ -24,7 +24,8 @@ echo " 1)Visual Studio Code
       13)Sublime Text
       14)Spotify
       15)Blender
-      16)Audacity"
+      16)Audacity
+      17)Lollypop Music Player"
 read OPTION
 
 # echo -n "The official language of $COUNTRY is "
@@ -167,6 +168,15 @@ case $OPTION in
    sudo snap install audacity > file.txt 2>&1
    sudo snap connect audacity:alsa > file.txt 2>&1
    echo -n "Audacity installed successfully"
+   sleep 1
+   clear
+  ;;
+  17)
+   echo -n "Installing  Lollypop Music Player"
+   sudo apt update > file.txt 2>&1
+   sudo apt install lollypop -y > file.txt 2>&1
+   sudo apt-get update --fix-missing > file.txt 2>&1
+   echo -n "Lollypop Music Player installed successfully"
    sleep 1
    clear
   ;;

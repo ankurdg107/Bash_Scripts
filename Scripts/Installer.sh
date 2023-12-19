@@ -25,7 +25,8 @@ echo " 1)Visual Studio Code
       14)Spotify
       15)Blender
       16)Audacity
-      17)Lollypop Music Player"
+      17)Lollypop Music Player
+      18)Grub-Customizer"
 read OPTION
 
 # echo -n "The official language of $COUNTRY is "
@@ -177,6 +178,16 @@ case $OPTION in
    sudo apt install lollypop -y > file.txt 2>&1
    sudo apt-get update --fix-missing > file.txt 2>&1
    echo -n "Lollypop Music Player installed successfully"
+   sleep 1
+   clear
+  ;;
+  1)
+   echo -n "Installing  Grub-Customizer"
+   sudo apt update > file.txt 2>&1
+   sudo add-apt-repository ppa:trebelnik-stefina/grub-customizer > file.txt 2>&1
+   sudo apt update --fix-missing > file.txt 2>&1
+   sudo apt install grub-customizer > file.txt 2>&1
+   echo -n "Grub-Customizer installed successfully!"
    sleep 1
    clear
   ;;

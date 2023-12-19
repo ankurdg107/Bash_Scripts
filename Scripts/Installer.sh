@@ -181,7 +181,7 @@ case $OPTION in
    sleep 1
    clear
   ;;
-  1)
+  18)
    echo -n "Installing  Grub-Customizer"
    sudo apt update > file.txt 2>&1
    sudo add-apt-repository ppa:trebelnik-stefina/grub-customizer > file.txt 2>&1

@@ -27,7 +27,7 @@ echo " 1)Visual Studio Code
       16)Audacity
       17)Lollypop Music Player
       18)Git
-      19)Telegram
+      19)OpenVPN
       20)Docker"
 read OPTION
 

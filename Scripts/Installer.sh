@@ -25,7 +25,8 @@ echo " 1)Visual Studio Code
       14)Spotify
       15)Blender
       16)Audacity
-      17)Lollypop Music Player"
+      17)Lollypop Music Player
+      18)Docker"
 read OPTION
 
 # echo -n "The official language of $COUNTRY is "
@@ -172,7 +173,7 @@ case $OPTION in
    clear
   ;;
   17)
-   echo -n "Installing  Lollypop Music Player"
+   echo -n "Installing Lollypop Music Player"
    sudo apt update > file.txt 2>&1
    sudo apt install lollypop -y > file.txt 2>&1
    sudo apt-get update --fix-missing > file.txt 2>&1
@@ -180,7 +181,18 @@ case $OPTION in
    sleep 1
    clear
   ;;
-  
+  18)
+   echo -n "Installing Docker"
+   sudo apt update > file.txt 2>&1
+   sudo apt install -y apt-transport-https ca-certificates curl software-properties-common > file.txt 2>&1
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg > file.txt 2>&1
+   echo "deb [signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   sudo apt update
+   sudo apt install -y docker-ce docker-ce-cli containerd.io
+   echo -n "Docker installed successfully"
+   sleep 1
+   clear
+  ;;
     
 
   *)

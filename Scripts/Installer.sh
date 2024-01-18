@@ -186,9 +186,9 @@ case $OPTION in
    sudo apt update > file.txt 2>&1
    sudo apt install -y apt-transport-https ca-certificates curl software-properties-common > file.txt 2>&1
    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg > file.txt 2>&1
-   echo "deb [signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-   sudo apt update
-   sudo apt install -y docker-ce docker-ce-cli containerd.io
+   echo "deb [signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null > file.txt 2>&1
+   sudo apt update > file.txt 2>&1
+   sudo apt install -y docker-ce docker-ce-cli containerd.io > file.txt 2>&1
    echo -n "Docker installed successfully"
    sleep 1
    clear

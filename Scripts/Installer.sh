@@ -26,7 +26,8 @@ echo " 1)Visual Studio Code
       15)Blender
       16)Audacity
       17)Lollypop Music Player
-      18)Docker"
+      18)Docker
+      19)Opera Web Browser"
 read OPTION
 
 # echo -n "The official language of $COUNTRY is "
@@ -194,6 +195,16 @@ case $OPTION in
    clear
   ;;
     
+  19)
+   echo -n "Installing Opera Web Browser"
+   sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list' > file.txt 2>&1
+   sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -' > file.txt 2>&1
+   sudo apt-get update > file.txt 2>&1
+   sudo apt-get install opera-stable > file.txt 2>&1
+   echo -n "Opera installed successfully"
+   sleep 1
+   clear
+  ;;
 
   *)
     echo -n "Exiting"

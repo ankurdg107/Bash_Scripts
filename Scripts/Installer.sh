@@ -28,6 +28,10 @@ echo " 1)Visual Studio Code
       17)Lollypop Music Player
       18)Docker
       19)Opera Web Browser"
+      19)Docker
+      20)MySQL
+      21)Grub-Customizer
+      22)OpenVPN "
 read OPTION
 
 # echo -n "The official language of $COUNTRY is "
@@ -190,12 +194,43 @@ case $OPTION in
    echo "deb [signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null > file.txt 2>&1
    sudo apt update > file.txt 2>&1
    sudo apt install -y docker-ce docker-ce-cli containerd.io > file.txt 2>&1
+=======
+   echo -n "Installing OpenVPN"
+   sudo apt update > file.txt 2>&1
+   sudo apt-get install openvpn -y > file.txt 2>&1
+   echo -n "OpenVPN installed successfully"
+   sleep 1
+   clear
+  ;;
+  19)
+   echo -n "Installing Docker"
+   sudo apt update > file.txt 2>&1
+   sudo apt-get install curl  -y> file.txt 2>&1
+   curl -fsSL https://get.docker.com/ | sh > file.txt 2>&1
+   sudo usermod -aG docker $(whoami) > file.txt 2>&1
    echo -n "Docker installed successfully"
    sleep 1
    clear
   ;;
+
+  20)
+   echo -n "Installing MySQL"
+   sudo apt update > file.txt 2>&1
+   sudo apt install mysql-server -y >> file.txt 2>&1
+   echo "MySQL installed successfully"
+   sleep 1
+   clear
+  ;;
+  21)
+   echo -n "Installing  Grub-Customizer"
+   sudo apt update > file.txt 2>&1
+   sudo add-apt-repository ppa:trebelnik-stefina/grub-customizer > file.txt 2>&1
+   sudo apt update --fix-missing > file.txt 2>&1
+   sudo apt install grub-customizer > file.txt 2>&1
+   echo -n "Grub-Customizer installed successfully!"
+
     
-  19)
+  22)
    echo -n "Installing Opera Web Browser"
    sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list' > file.txt 2>&1
    sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -' > file.txt 2>&1

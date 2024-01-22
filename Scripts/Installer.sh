@@ -28,7 +28,8 @@ echo " 1)Visual Studio Code
       17)Lollypop Music Player
       18)OpenVPN
       19)Docker
-      20)MySQL"
+      20)MySQL
+      21)Grub-Customizer "
 read OPTION
 
 # echo -n "The official language of $COUNTRY is "
@@ -209,6 +210,13 @@ case $OPTION in
    sleep 1
    clear
   ;;
+  21)
+   echo -n "Installing  Grub-Customizer"
+   sudo apt update > file.txt 2>&1
+   sudo add-apt-repository ppa:trebelnik-stefina/grub-customizer > file.txt 2>&1
+   sudo apt update --fix-missing > file.txt 2>&1
+   sudo apt install grub-customizer > file.txt 2>&1
+   echo -n "Grub-Customizer installed successfully!"
   
     
 

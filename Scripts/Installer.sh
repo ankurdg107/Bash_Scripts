@@ -25,7 +25,10 @@ echo " 1)Visual Studio Code
       14)Spotify
       15)Blender
       16)Audacity
-      17)Lollypop Music Player"
+      17)Lollypop Music Player
+      18)OpenVPN
+      19)Docker
+      20)MySQL"
 read OPTION
 
 # echo -n "The official language of $COUNTRY is "
@@ -177,6 +180,32 @@ case $OPTION in
    sudo apt install lollypop -y > file.txt 2>&1
    sudo apt-get update --fix-missing > file.txt 2>&1
    echo -n "Lollypop Music Player installed successfully"
+   sleep 1
+   clear
+  ;;
+  18)
+   echo -n "Installing OpenVPN"
+   sudo apt update > file.txt 2>&1
+   sudo apt-get install openvpn -y > file.txt 2>&1
+   echo -n "OpenVPN installed successfully"
+   sleep 1
+   clear
+  ;;
+  19)
+   echo -n "Installing Docker"
+   sudo apt update > file.txt 2>&1
+   sudo apt-get install curl  -y> file.txt 2>&1
+   curl -fsSL https://get.docker.com/ | sh > file.txt 2>&1
+   sudo usermod -aG docker $(whoami) > file.txt 2>&1
+   echo -n "Docker installed successfully"
+   sleep 1
+   clear
+  ;;
+  20)
+   echo -n "Installing MySQL"
+   sudo apt update > file.txt 2>&1
+   sudo apt install mysql-server -y >> file.txt 2>&1
+   echo "MySQL installed successfully"
    sleep 1
    clear
   ;;

@@ -26,7 +26,10 @@ echo " 1)Visual Studio Code
       15)Blender
       16)Audacity
       17)Lollypop Music Player
-      18)Grub-Customizer"
+      18)OpenVPN
+      19)Docker
+      20)MySQL
+      21)Grub-Customizer "
 read OPTION
 
 # echo -n "The official language of $COUNTRY is "
@@ -182,15 +185,38 @@ case $OPTION in
    clear
   ;;
   18)
+   echo -n "Installing OpenVPN"
+   sudo apt update > file.txt 2>&1
+   sudo apt-get install openvpn -y > file.txt 2>&1
+   echo -n "OpenVPN installed successfully"
+   sleep 1
+   clear
+  ;;
+  19)
+   echo -n "Installing Docker"
+   sudo apt update > file.txt 2>&1
+   sudo apt-get install curl  -y> file.txt 2>&1
+   curl -fsSL https://get.docker.com/ | sh > file.txt 2>&1
+   sudo usermod -aG docker $(whoami) > file.txt 2>&1
+   echo -n "Docker installed successfully"
+   sleep 1
+   clear
+  ;;
+  20)
+   echo -n "Installing MySQL"
+   sudo apt update > file.txt 2>&1
+   sudo apt install mysql-server -y >> file.txt 2>&1
+   echo "MySQL installed successfully"
+   sleep 1
+   clear
+  ;;
+  21)
    echo -n "Installing  Grub-Customizer"
    sudo apt update > file.txt 2>&1
    sudo add-apt-repository ppa:trebelnik-stefina/grub-customizer > file.txt 2>&1
    sudo apt update --fix-missing > file.txt 2>&1
    sudo apt install grub-customizer > file.txt 2>&1
    echo -n "Grub-Customizer installed successfully!"
-   sleep 1
-   clear
-  ;;
   
     
 

@@ -26,10 +26,14 @@ echo " 1)Visual Studio Code
       15)Blender
       16)Audacity
       17)Lollypop Music Player
-      18)OpenVPN
+      18)Docker
+      19)Opera Web Browser
       19)Docker
       20)MySQL
-      21)Grub-Customizer "
+      21)Grub-Customizer
+      22)OpenVPN "
+    
+echo "Enter choice: "
 read OPTION
 
 # echo -n "The official language of $COUNTRY is "
@@ -176,7 +180,7 @@ case $OPTION in
    clear
   ;;
   17)
-   echo -n "Installing  Lollypop Music Player"
+   echo -n "Installing Lollypop Music Player"
    sudo apt update > file.txt 2>&1
    sudo apt install lollypop -y > file.txt 2>&1
    sudo apt-get update --fix-missing > file.txt 2>&1
@@ -185,6 +189,14 @@ case $OPTION in
    clear
   ;;
   18)
+   echo -n "Installing Docker"
+   sudo apt update > file.txt 2>&1
+   sudo apt install -y apt-transport-https ca-certificates curl software-properties-common > file.txt 2>&1
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg > file.txt 2>&1
+   echo "deb [signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null > file.txt 2>&1
+   sudo apt update > file.txt 2>&1
+   sudo apt install -y docker-ce docker-ce-cli containerd.io > file.txt 2>&1
+=======
    echo -n "Installing OpenVPN"
    sudo apt update > file.txt 2>&1
    sudo apt-get install openvpn -y > file.txt 2>&1
@@ -202,6 +214,7 @@ case $OPTION in
    sleep 1
    clear
   ;;
+
   20)
    echo -n "Installing MySQL"
    sudo apt update > file.txt 2>&1
@@ -217,8 +230,20 @@ case $OPTION in
    sudo apt update --fix-missing > file.txt 2>&1
    sudo apt install grub-customizer > file.txt 2>&1
    echo -n "Grub-Customizer installed successfully!"
-  
+   sleep 1
+   clear
+  ;;
     
+  22)
+   echo -n "Installing Opera Web Browser"
+   sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list' > file.txt 2>&1
+   sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -' > file.txt 2>&1
+   sudo apt-get update > file.txt 2>&1
+   sudo apt-get install opera-stable > file.txt 2>&1
+   echo -n "Opera installed successfully"
+   sleep 1
+   clear
+  ;;
 
   *)
     echo -n "Exiting"

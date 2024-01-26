@@ -27,11 +27,13 @@ echo " 1)Visual Studio Code
       16)Audacity
       17)Lollypop Music Player
       18)Docker
-      19)Opera Web Browser"
+      19)Opera Web Browser
       19)Docker
       20)MySQL
       21)Grub-Customizer
       22)OpenVPN "
+    
+echo "Enter choice: "
 read OPTION
 
 # echo -n "The official language of $COUNTRY is "
@@ -228,7 +230,9 @@ case $OPTION in
    sudo apt update --fix-missing > file.txt 2>&1
    sudo apt install grub-customizer > file.txt 2>&1
    echo -n "Grub-Customizer installed successfully!"
-
+   sleep 1
+   clear
+  ;;
     
   22)
    echo -n "Installing Opera Web Browser"
